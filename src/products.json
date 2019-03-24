@@ -1,0 +1,130 @@
+{
+    "products": [
+        {
+            "name": "puszka 0.2",
+            "key": "can02",
+            "receipts": 24,
+            "transaction": 24,
+            "volumen": 0.86
+        },
+        {
+            "name": "puszka 0.33",
+            "key": "can03",
+            "receipts": 28.80,
+            "transaction": 24,
+            "volumen": 1.42
+        },
+        {
+            "name": "butelka 0.33",
+            "key": "szklo03",
+            "receipts": 28.80,
+            "transaction": 12,
+            "volumen": 0.71
+        },
+        {
+            "name": "butelka CC 0.5",
+            "key": "cc05",
+            "receipts": 35.82,
+            "transaction": 18,
+            "volumen": 1.61
+        },
+        {
+            "name": "butelka 0.5",
+            "key": "pet05",
+            "receipts": 23.88,
+            "transaction": 12,
+            "volumen": 1.07
+        },
+        {
+            "name": "butelka 1l",
+            "key": "pet10",
+            "receipts": 33,
+            "transaction": 12,
+            "volumen": 2.15
+        },
+        {
+            "name": "butelka 1.5",
+            "key": "pet15",
+            "receipts": 26.10,
+            "transaction": 9,
+            "volumen": 2.42
+        },
+        {
+            "name": "butelka 2.25",
+            "key": "pet225",
+            "receipts": 37.52,
+            "transaction": 8,
+            "volumen": 3.23
+        },
+        {
+            "name": "burn 0.25",
+            "key": "burn25",
+            "receipts": 21.60,
+            "transaction": 12,
+            "volumen": 0.53
+        },
+        {
+            "name": "monster energy 0.5",
+            "key": "energy05",
+            "receipts": 67.20,
+            "transaction": 24,
+            "volumen": 2.15
+        },
+        {
+            "name": "monster 0.5",
+            "key": "can05",
+            "receipts": 33.6,
+            "transaction": 12,
+            "volumen": 1.08
+        },
+        {
+            "name": "woda 0.5",
+            "key": "kb05",
+            "receipts": 14.88,
+            "transaction": 12,
+            "volumen": 1.07
+        },
+        {
+            "name": "woda 1.5",
+            "key": "kb15",
+            "receipts": 6.84,
+            "transaction": 6,
+            "volumen": 1.61
+        },
+        {
+            "name": "tea 0.33",
+            "key": "tea03",
+            "receipts": 28.8,
+            "transaction": 24,
+            "volumen": 1.42
+        },
+        {
+            "name": "tea 0.5",
+            "key": "tea05",
+            "receipts": 20.04,
+            "transaction": 12,
+            "volumen": 1.07
+        },
+        {
+            "name": "tea 1.5",
+            "key": "tea15",
+            "receipts": 22.20,
+            "transaction": 6,
+            "volumen": 1.61
+        },
+        {
+            "name": "cappy 0.33",
+            "key": "cap33",
+            "receipts": 22.68,
+            "transaction": 12,
+            "volumen": 0.71
+        },
+        {
+            "name": "cappy 1l",
+            "key": "cap10",
+            "receipts": 24.60,
+            "transaction": 6,
+            "volumen": 1.07
+        }
+    ]
+}

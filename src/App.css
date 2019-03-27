@@ -32,7 +32,7 @@ ul{
 
 }
 ul>li{
-/* float: left; */
+float: left;
 };
 .result{
   display: inline;

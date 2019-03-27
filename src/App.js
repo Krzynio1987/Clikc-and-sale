@@ -10,6 +10,8 @@ import products from './products.json'
 class App extends Component {
   state = {
     totalVolume: 0,
+    totalTransaction: 0,
+    totalReceipts: 0,
     inputs: {}
   };
 
@@ -21,9 +23,16 @@ class App extends Component {
     Object.keys(this.state.inputs).map((current) => {
       const [product] = products.products.filter((product) => product.key === current)
 
+
+
       this.setState({
         totalVolume: this.state.totalVolume + (
-          this.state.inputs[current] * product.volumen
+          this.state.inputs[current] * product.volumen),
+        // ), nie działa poprawnie ten kod ponizej źle sumują się produkty
+        totalTransaction: this.state.totalTransaction + (
+          this.state.inputs[current] * product.transaction),
+        totalReceipts: this.state.totalReceipts + (
+          this.state.inputs[current] * product.receipts
         )
       })
     })
@@ -40,7 +49,9 @@ class App extends Component {
           productsState={this.state}
           products={products.products}
           handleOnChange={this.handleOnChange}
-          totalVolume={this.state.totalVolume} />
+          totalVolume={this.state.totalVolume}
+          totalTransaction={this.state.totalTransaction}
+          totalReceipts={this.state.totalReceipts} />
       </div>
     );
   }

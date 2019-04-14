@@ -30,22 +30,22 @@ export default class MonthTarget extends React.Component {
         this.setState({ monthReceipts: this.state.inputReceipts })
         this.setState({ monthTransactions: this.state.inputTransactions })
         this.setState({ monthVolumen: this.state.inputVolumen })
-        this.setState({ average: this.state.inputReceipts / this.state.inputDays })
-        this.setState({ average2: this.state.inputTransactions / this.state.inputDays })
-        this.setState({ average3: this.state.inputVolumen / this.state.inputDays })
+        this.setState({ average: (this.state.inputReceipts / this.state.inputDays).toFixed(2) })
+        this.setState({ average2: (this.state.inputTransactions / this.state.inputDays).toFixed(2) })
+        this.setState({ average3: (this.state.inputVolumen / this.state.inputDays).toFixed(2) })
     }
 
     render() {
         return (<div>
             <input placeholder="Dni sprzedaży" name="inputDays" onChange={this.handleChange} />
-            <Button variant="outline-warning" onClick={this.onFirstButtonClick}>Dodaj</Button>
+            <button className='hvr-sweep-to-right' onClick={this.onFirstButtonClick}>Dodaj</button>
             <input placeholder="Target obrót" name="inputReceipts" onChange={this.handleChange} />
             <input placeholder="Target transakcje" name="inputTransactions" onChange={this.handleChange} />
             <input placeholder="Target volumen" name="inputVolumen" onChange={this.handleChange} />
-            <Button variant="outline-warning" onClick={this.onSecondButtonClick}>Dodaj</Button>
-            <div>Dni sprzedaży: {this.state.daysOfSale} </div>
-            <div>Twój cel miesięczny: {this.state.monthReceipts} obrotu {this.state.monthTransactions} transakcji {this.state.monthVolumen} Volumenu</div>
-            <div>Średnia na dzień: {this.state.average} obrotu {this.state.average2} transakcji {this.state.average3} volumenu  </div>
+            <button className='hvr-sweep-to-right' onClick={this.onSecondButtonClick}>Dodaj</button>
+            <div className="sales-day">Dni sprzedaży: {this.state.daysOfSale} </div>
+            <div className="month-target">Twój cel miesięczny: {this.state.monthReceipts} Obrotu {this.state.monthTransactions} Transakcji {this.state.monthVolumen} Volumenu</div>
+            <div className="average-day">Średnia na dzień: {this.state.average} Obrotu {this.state.average2} Transakcji {this.state.average3} Volumenu  </div>
 
         </div>)
     }

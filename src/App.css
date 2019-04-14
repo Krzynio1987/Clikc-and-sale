@@ -1,39 +1,112 @@
 input{
-width: 15vw;
-border-radius: 25%;
-border: solid black 1px;
+width: 12vw;
+border-radius: 15px;
+margin: 0 5px;
+text-align: center;
+opacity: .8;
+outline: none;
 }
+
+.product {
+  width: 175px;
+  float: left;
+}
+.button-add{
+  margin-top: 30px;
+  margin-right: 100px;
+ 
+}
+.button-clear{
+  margin-top: 30px;
+}
+
 
 .App {
+padding-top: 100px;
   text-align: center;
   width: 100vw;
-}
-img{
-  width: 70vw;
-  height: 30vh;
-}
-Button {
-  margin: 0 5px 0 5px;
-  
-}
-input {
-  margin: 0 5px;
-  text-align: center;
+  height: 100vh;
+  background-image: url("./tlo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-shadow: -1px 0 black, 0 1px rgba(253, 4, 4),
+      1px 0 black, 0 -1px rgb(253, 4, 4)
 }
 
+Button {
+  margin: 0 25px 0 5px;
+  color: rgb(230, 32, 45) ;
+  width: 10vw;
+  border-radius: 15px;
+}
 body{
-  color: white;
+  color:  whitesmoke;
   font-size: 18px;
-  font-weight: 600;
-  background-color: rgb(230, 32, 45);
+  font-weight: 800;
 }
 ul{
+  margin-top: 50px;
  list-style-type: none;
-
 }
+
 ul>li{
-float: left;
-};
+display: inline-block;
+}
+
 .result{
-  display: inline;
+  display: block;
+  margin-top: 80px;
+}
+
+.hvr-sweep-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  border-radius: 15px;
+}
+.hvr-sweep-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(230, 32, 45);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  border-radius: 15px;
+}
+.hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+  color: white;
+}
+.hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.sales-day{
+  margin-top: 15px;
+}
+.month-target{
+  margin-top: 15px;
+}
+.average-day{
+  margin-top: 15px;
 }

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import logo from './img/logoCocaCola.jpg';
-import MonthTarget from './components/MonthTarget'
-import Products from './components/Products'
-import Result from './components/Result'
-import products from './products.json'
+import MonthTarget from './components/MonthTarget';
+import Products from './components/Products';
+import Result from './components/Result';
+import products from './products.json';
+import background from './tlo.jpg';
 
 
 class App extends Component {
@@ -16,32 +17,35 @@ class App extends Component {
   };
 
   handleOnChange = (event) => {
-    this.setState({ inputs: { [event.target.name]: event.target.value } })
+    const newInputs = { ...this.state.inputs, [event.target.name]: event.target.value }
+    console.log(newInputs)
+    this.setState({ inputs: newInputs })
   }
 
-  handleProductButton = () => {
+  handleProductButton = (e) => {
+    e.preventDefault();
     Object.keys(this.state.inputs).map((current) => {
       const [product] = products.products.filter((product) => product.key === current)
 
+      console.log(this.state.inputs[current])
 
-
-      this.setState({
-        totalVolume: this.state.totalVolume + (
-          this.state.inputs[current] * product.volumen),
-        // ), nie działa poprawnie ten kod ponizej źle sumują się produkty
-        totalTransaction: this.state.totalTransaction + (
-          this.state.inputs[current] * product.transaction),
-        totalReceipts: this.state.totalReceipts + (
-          this.state.inputs[current] * product.receipts
-        )
+      this.setState((state, props) => {
+        return {
+          totalVolume: state.totalVolume + (
+            state.inputs[current] * product.volumen),
+          totalTransaction: state.totalTransaction + (
+            state.inputs[current] * product.transaction),
+          totalReceipts: state.totalReceipts + (
+            state.inputs[current] * product.receipts
+          )
+        }
       })
     })
   };
 
   render() {
     return (
-      <div className="App">
-        <img src={logo} alt="logo Coca Cola"></img>
+      <div className="App" background-image={background}>
         <MonthTarget />
         <Products products={products} handleOnChange={this.handleOnChange}
           handleProductButton={this.handleProductButton} />

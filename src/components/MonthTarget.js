@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 
 export default class MonthTarget extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             inputDays: 0,
             daysOfSale: 0,
@@ -20,12 +20,17 @@ export default class MonthTarget extends React.Component {
     }
 
     handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
     onFirstButtonClick = () => {
-        this.setState({ daysOfSale: this.state.inputDays })
+        this.setState({
+            daysOfSale: this.state.inputDays
+        })
     }
+
     onSecondButtonClick = () => {
         this.setState({ monthReceipts: this.state.inputReceipts })
         this.setState({ monthTransactions: this.state.inputTransactions })

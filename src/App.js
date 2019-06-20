@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
-import logo from './img/logoCocaCola.jpg';
+
 import MonthTarget from './components/MonthTarget';
 import Products from './components/Products';
 import Result from './components/Result';
+
 import products from './products.json';
 import background from './tlo.jpg';
-
+import './App.css';
 
 class App extends Component {
   state = {
@@ -17,17 +17,18 @@ class App extends Component {
   };
 
   handleOnChange = (event) => {
-    const newInputs = { ...this.state.inputs, [event.target.name]: event.target.value }
-    console.log(newInputs)
-    this.setState({ inputs: newInputs })
+    this.setState({
+      inputs: {
+        ...this.state.inputs,
+        [event.target.name]: event.target.value }
+    });
   }
 
-  handleProductButton = (e) => {
+  addProducts = e => {
     e.preventDefault();
-    Object.keys(this.state.inputs).map((current) => {
-      const [product] = products.products.filter((product) => product.key === current)
 
-      console.log(this.state.inputs[current])
+    Object.keys(this.state.inputs).map(current => {
+      const [product] = products.products.filter((product) => product.key === current);
 
       this.setState((state, props) => {
         return {
@@ -43,19 +44,30 @@ class App extends Component {
     })
   };
 
+  clearInputs() {
+    this.setState({ inputs: {} });
+  }
+
   render() {
     return (
       <div className="App" background-image={background}>
         <MonthTarget />
-        <Products products={products} handleOnChange={this.handleOnChange}
-          handleProductButton={this.handleProductButton} />
+
+        <Products
+            onClear={() => this.clearInputs()}
+            products={products}
+            handleOnChange={event => this.handleOnChange(event)}
+            addProducts={this.addProducts}
+        />
+
         <Result
-          productsState={this.state}
-          products={products.products}
-          handleOnChange={this.handleOnChange}
-          totalVolume={this.state.totalVolume}
-          totalTransaction={this.state.totalTransaction}
-          totalReceipts={this.state.totalReceipts} />
+            productsState={this.state}
+            products={products.products}
+            handleOnChange={event => this.handleOnChange(event)}
+            totalVolume={this.state.totalVolume}
+            totalTransaction={this.state.totalTransaction}
+            totalReceipts={this.state.totalReceipts}
+        />
       </div>
     );
   }
